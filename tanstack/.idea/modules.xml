@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/tkdevtalk-tanstack-start-intro-prepare.iml" filepath="$PROJECT_DIR$/.idea/tkdevtalk-tanstack-start-intro-prepare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tanstack.iml" filepath="$PROJECT_DIR$/.idea/tanstack.iml" />
     </modules>
   </component>
 </project>
