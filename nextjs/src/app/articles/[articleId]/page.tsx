@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 import ArticlePageLayout from "@/components/articlepage/ArticlePageLayout";
+import RelatedArticleBox from "@/components/articlepage/RelatedArticleBox";
 import RelatedArticleSlider from "@/components/articlepage/RelatedArticleSlider";
 import LoadingIndicator from "@/components/LoadingIndicator";
 import { fetchArticle, fetchRelatedArticles } from "@/queries/queries";
@@ -26,7 +27,10 @@ export default async function ArticlePage({ params }: ArticleIdPageProps) {
   // Selbes Problem wie mit TS Start initial: WASSER FALL
   //  => wir reparieren das gleich
   //  => WIR ÜBERTRAGEN **DATEN** VOM SERVER ZUM CLIENT
-  const relatedArticlesPromise = fetchRelatedArticles(articleId);
+  const relatedArticlesPromise = fetchRelatedArticles(articleId).then(
+    (ralist) =>
+      ralist.map((ra) => <RelatedArticleBox key={ra.id} article={ra} />),
+  );
   const article = await fetchArticle(articleId);
   if (!article) {
     return notFound();

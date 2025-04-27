@@ -1,13 +1,11 @@
 "use client";
 
-import { use, useState } from "react";
+import { ReactNode, use, useState } from "react";
 
-import RelatedArticleBox from "@/components/articlepage/RelatedArticleBox";
 import { ArrowButton } from "@/components/Button";
-import { RelatedArticle } from "@/types";
 
 type RelatedArticlesProps = {
-  relatedArticlesPromise: Promise<RelatedArticle[]>;
+  relatedArticlesPromise: Promise<ReactNode[]>;
 };
 
 export default function RelatedArticleSlider({
@@ -37,7 +35,7 @@ export default function RelatedArticleSlider({
       >
         <ArrowButton direction={"left"} />
       </button>
-      <RelatedArticleBox article={article} />
+      {article}
       <button
         onClick={() => handleClick(+1)}
         className={"absolute right-2 top-2"}
