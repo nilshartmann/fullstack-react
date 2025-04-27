@@ -1,12 +1,13 @@
 import {
   HeadContent,
   Outlet,
+  Scripts,
   createRootRouteWithContext,
   redirect,
 } from "@tanstack/react-router";
-import "../globals.css";
-// import globalsCss from "../globals.css?url";
+// import "../globals.css";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import globalsCss from "../globals.css?url";
 import type { QueryClient } from "@tanstack/react-query";
 
 import GlobalHeader from "@/components/layout/GlobalHeader.tsx";
@@ -35,7 +36,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
     ],
     links: [
-      // { href: globalsCss, rel: "stylesheet" },
+      { href: globalsCss, rel: "stylesheet" },
       { href: "/fonts/google-fonts.css", rel: "stylesheet" },
       { href: "/fontawesome/css/fontawesome.css", rel: "stylesheet" },
       { href: "/fontawesome/css/brands.css", rel: "stylesheet" },
@@ -49,9 +50,11 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 
 function RootComponent() {
   return (
-    <>
-      <HeadContent />
-      <>
+    <html>
+      <head>
+        <HeadContent />
+      </head>
+      <body suppressHydrationWarning>
         <GlobalHeader />
         <Outlet />
         {/*
@@ -63,7 +66,8 @@ function RootComponent() {
            
            */}
         <ReactQueryDevtools />
-      </>
-    </>
+        <Scripts />
+      </body>
+    </html>
   );
 }
