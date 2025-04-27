@@ -8,7 +8,7 @@ export const enableRelatedArticlesButton = true;
 // <ReadingSpeedProvider> to /app/layout.tsx
 export const showReadingSpeedChooser = false;
 
-export const showBreakingNews = false;
+export const showBreakingNews = true;
 
 /**
  * Can be used to artifically delay single GraphQL requests
