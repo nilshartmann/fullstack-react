@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 
 import ArticlePageLayout from "@/components/articlepage/ArticlePageLayout";
-import { fetchArticle } from "@/queries/queries";
+import RelatedArticleSlider from "@/components/articlepage/RelatedArticleSlider";
+import { fetchArticle, fetchRelatedArticles } from "@/queries/queries";
 
 type ArticleIdPageProps = {
   params: Promise<Record<string, string>>;
@@ -20,10 +21,19 @@ type ArticleIdPageProps = {
 export default async function ArticlePage({ params }: ArticleIdPageProps) {
   const { articleId } = await params;
 
+  // Selbes Problem wie mit TS Start initial: WASSER FALL
+  //  => wir reparieren das gleich
+  //  => WIR ÜBERTRAGEN **DATEN** VOM SERVER ZUM CLIENT
+  const relatedArticles = await fetchRelatedArticles(articleId);
   const article = await fetchArticle(articleId);
   if (!article) {
     return notFound();
   }
 
-  return <ArticlePageLayout article={article} />;
+  return (
+    <ArticlePageLayout
+      article={article}
+      sidebar={<RelatedArticleSlider relatedArticles={relatedArticles} />}
+    />
+  );
 }
