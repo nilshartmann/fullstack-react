@@ -6,6 +6,7 @@ import {
 } from "@tanstack/react-router";
 import "../globals.css";
 // import globalsCss from "../globals.css?url";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { QueryClient } from "@tanstack/react-query";
 
 import GlobalHeader from "@/components/layout/GlobalHeader.tsx";
@@ -53,6 +54,15 @@ function RootComponent() {
       <>
         <GlobalHeader />
         <Outlet />
+        {/*
+           DEMO
+           - NICHT VERLANGSAMEN!!!!
+
+           - Navigation => Query Cache füllt sich
+           -            => keine Requests mehr
+           
+           */}
+        <ReactQueryDevtools />
       </>
     </>
   );
