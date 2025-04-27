@@ -3,6 +3,8 @@ import { formatDate } from "@/components/format-date";
 import { LikesWidget } from "@/components/LikesWidget";
 import ReadingTimeWidget from "@/components/ReadingTimeWidget";
 import { Article } from "@/types";
+import { GlobalLoadingIndicator } from "@/components/GlobalLoadingIndicator.tsx";
+import LoadingIndicator from "@/components/LoadingIndicator.tsx";
 
 type ArticleBannerProps = {
   article: Article;

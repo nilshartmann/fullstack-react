@@ -2,7 +2,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 
 import ArticleListGrid from "@/components/articlelistpage/ArticleListGrid.tsx";
-import { getArticleListOpts } from "@/queries.ts";
+import { getArticleListOpts } from "@/api/queries.ts";
 
 export const Route = createFileRoute("/articles/")({
   component: ArticleListPage,

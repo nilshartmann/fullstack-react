@@ -1,5 +1,3 @@
-import "./ArticleBannerWrapper.css";
-
 import { ReactNode } from "react";
 
 type ArticleBannerWrapperProps = {
@@ -17,7 +15,7 @@ export default function ArticleBannerWrapper({
         "--article-bg-image": `url('${backgroundImageUri}')`,
       }}
     >
-      <div className={`ecolify-header-wrap mt-8 px-12 py-8`}>{children}</div>
+      <div className={`ecolify-header-wrap mt-4 px-12 py-8`}>{children}</div>
     </div>
   );
 }

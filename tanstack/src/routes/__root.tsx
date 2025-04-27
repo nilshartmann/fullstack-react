@@ -1,11 +1,11 @@
-import "../globals.css";
-
 import {
   HeadContent,
   Outlet,
   createRootRouteWithContext,
   redirect,
 } from "@tanstack/react-router";
+import "../globals.css";
+// import globalsCss from "../globals.css?url";
 import type { QueryClient } from "@tanstack/react-query";
 
 import GlobalHeader from "@/components/layout/GlobalHeader.tsx";
@@ -34,6 +34,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
     ],
     links: [
+      // { href: globalsCss, rel: "stylesheet" },
       { href: "/fonts/google-fonts.css", rel: "stylesheet" },
       { href: "/fontawesome/css/fontawesome.css", rel: "stylesheet" },
       { href: "/fontawesome/css/brands.css", rel: "stylesheet" },

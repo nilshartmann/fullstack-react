@@ -1,5 +1,3 @@
-import "./ArticlesRouteHeader.css";
-
 import { Link } from "@tanstack/react-router";
 
 import BreakingNews from "@/components/BreakingNews";

@@ -23,20 +23,13 @@ export default function ArticleCard({ article }: ArticleCardProps) {
             "border-b-4 border-b-teal-800 group-hover:border-b-rose-700"
           }
         >
-          <Link
-            to={`/articles/$articleId`}
-            params={{
-              articleId: article.id,
-            }}
-          >
-            <div className={"overflow-hidden"}>
-              <img
-                className="h-32 max-h-full w-full max-w-full transform rounded-t-lg object-cover transition-all duration-500 ease-in-out hover:scale-110"
-                src={article.image.uri}
-                alt={article.title}
-              />
-            </div>
-          </Link>
+          <div className={"overflow-hidden"}>
+            <img
+              className="h-32 max-h-full w-full max-w-full transform rounded-t-lg object-cover transition-all duration-500 ease-in-out hover:scale-110"
+              src={article.image.uri}
+              alt={article.title}
+            />
+          </div>
         </div>
       )}
       <div
@@ -47,17 +40,14 @@ export default function ArticleCard({ article }: ArticleCardProps) {
             {article.category}
           </div>
           <H1 className={"font-opensans font-bold text-teal-700"}>
-            <Link
-              to={`/articles/$articleId`}
-              params={{
-                articleId: article.id,
-              }}
-              className={
-                "hover:text-teal-800 hover:underline hover:decoration-4"
-              }
-            >
-              {article.title}
-            </Link>
+            {/*
+
+              todo:
+              <Link to={`/articles/$articleId`} params={{articleId: article.id}}
+                  clasName="hover:text-teal-800 hover:underline hover:decoration-4">
+
+            */}
+            {article.title}
           </H1>
           <div className={"text font-inter"}>
             <span className={"leading-3"}>{formatDate(article.date)} </span>

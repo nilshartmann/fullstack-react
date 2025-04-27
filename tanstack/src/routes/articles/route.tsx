@@ -1,4 +1,4 @@
-import { Outlet,createFileRoute } from "@tanstack/react-router";
+import { Outlet, createFileRoute } from "@tanstack/react-router";
 
 import ArticlesRouteHeader from "@/components/layout/ArticlesRouteHeader";
 import Footer from "@/components/layout/Footer";

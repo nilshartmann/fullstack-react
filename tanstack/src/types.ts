@@ -39,6 +39,18 @@ export type RelatedArticle = z.infer<typeof RelatedArticle>;
 
 export const Article = BaseArticle.extend({
   body: z.string(),
+  prevArticle: z
+    .object({
+      id: z.string(),
+      title: z.string(),
+    })
+    .nullish(),
+  nextArticle: z
+    .object({
+      id: z.string(),
+      title: z.string(),
+    })
+    .nullish(),
 });
 export type Article = z.infer<typeof Article>;
 

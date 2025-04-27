@@ -1,11 +1,13 @@
 import { ReactNode } from "react";
 
+import { Link } from "@tanstack/react-router";
 import { ArticleBanner } from "@/components/articlepage/ArticleBanner";
 import ArticleBody from "@/components/articlepage/ArticleBody";
 import TwoColumnLayout from "@/components/layout/TwoColumnLayout";
 import { Sidebar } from "@/components/Sidebar.tsx";
 import { SidebarBox } from "@/components/SidebarBox.tsx";
 import { Article } from "@/types";
+import { Button } from "@/components/Button.tsx";
 
 type ArticlePageProps = {
   article: Article;
@@ -20,6 +22,7 @@ export default function ArticlePageLayout({
 }: ArticlePageProps) {
   return (
     <>
+      {/*<ArticleNavBar article={article} />*/}
       <ArticleBanner article={article} />
       <TwoColumnLayout
         sidebar={

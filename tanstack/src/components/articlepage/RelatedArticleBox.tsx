@@ -49,13 +49,14 @@ export default function RelatedArticleBox({
                 "mx-2 flex justify-center rounded-lg bg-white/90 p-2 text-center"
               }
             >
-              <Link
-                to={`/articles/$articleId`}
-                params={{ articleId: article.id }}
-                className={"hover:underline"}
-              >
-                <H3 className={"text-teal-700"}>{article.title}</H3>
-              </Link>
+              {/*todo:
+                <Link to={`/articles/$articleId`}
+                  params={{ articleId: article.id }}
+                  className={"hover:underline"}>
+                    <H3 className={"text-teal-700"}>{article.title}</H3>
+                </Link>
+            */}
+              <H3 className={"text-teal-700"}>{article.title}</H3>
             </div>
           </div>
           {enableRelatedArticlesButton && (

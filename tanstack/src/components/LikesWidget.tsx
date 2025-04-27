@@ -1,5 +1,5 @@
 import { LikeIcon, LikeIndicator } from "@/components/LoadingIndicator";
-import { useAddLikeMutation } from "@/queries.ts";
+import { useAddLikeMutation } from "@/api/queries.ts";
 
 type LikesWidgetProps = {
   articleId: string;

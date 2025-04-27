@@ -4,7 +4,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 import RelatedArticleBox from "@/components/articlepage/RelatedArticleBox";
-import { getRelatedArticleOpts } from "@/queries.ts";
+import { getRelatedArticleOpts } from "@/api/related-articles-query.ts";
 
 type RelatedArticlesProps = {
   articleId: string;
