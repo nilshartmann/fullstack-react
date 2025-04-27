@@ -1,6 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import React from "react";
 
-import { Link } from "@tanstack/react-router";
 import { NewsletterRegistration } from "@/components/NewsletterRegistration";
 
 export default function GlobalHeader() {

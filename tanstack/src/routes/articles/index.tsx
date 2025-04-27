@@ -1,10 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { getArticleListOpts } from "@/queries.ts";
+import { createFileRoute } from "@tanstack/react-router";
+
 import ArticleListGrid from "@/components/articlelistpage/ArticleListGrid.tsx";
+import { getArticleListOpts } from "@/queries.ts";
 
 export const Route = createFileRoute("/articles/")({
-  component: ArticleList,
+  component: ArticleListPage,
   loader({ context }) {
     // ganze Seite soll mit SSR gerendert werden:
     //   - wir müssen im Loader ein Promise zurückliefern
@@ -25,14 +26,14 @@ export const Route = createFileRoute("/articles/")({
     // - Problem; wenn die DAten hier geladen werden, dann ist die Komponente
     //    kein "Subscriber", d.h. wenn die Daten über den CACHE geändert werden,
     //    findet kein Re-Rendering statt...
-    //     -> In den Beispielen machen Sie Preload + useSuspenseQuery
+    //     -> In den Beispielen machen Sie loader mit ensureQueryData + useSuspenseQuery in der Komponente
     //     https://tanstack.com/router/latest/docs/framework/react/examples/basic-react-query-file-based?path=examples%2Freact%2Fbasic-react-query-file-based%2Fsrc%2Froutes%2Fposts.route.tsx
 
     return context.queryClient.ensureQueryData(getArticleListOpts());
   },
 });
 
-function ArticleList() {
+function ArticleListPage() {
   const { data: articles } = useSuspenseQuery(getArticleListOpts());
 
   return <ArticleListGrid articles={articles.articles} />;

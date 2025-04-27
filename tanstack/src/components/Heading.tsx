@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+import type { ReactNode } from "react";
 
 type HeadingProps = {
   children: ReactNode;

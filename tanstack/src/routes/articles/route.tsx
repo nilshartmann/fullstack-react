@@ -1,17 +1,11 @@
-import { Outlet, createFileRoute } from "@tanstack/react-router";
-
-import { ReactNode } from "react";
+import { Outlet,createFileRoute } from "@tanstack/react-router";
 
 import ArticlesRouteHeader from "@/components/layout/ArticlesRouteHeader";
 import Footer from "@/components/layout/Footer";
 
 export const Route = createFileRoute("/articles")({
-  component: RouteComponent,
+  component: ArticlesRouteLayout,
 });
-
-function RouteComponent() {
-  return <ArticlesRouteLayout />;
-}
 
 function ArticlesRouteLayout() {
   return (

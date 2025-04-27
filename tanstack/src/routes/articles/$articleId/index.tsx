@@ -1,17 +1,11 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
-import { z } from "zod";
-import { zodValidator } from "@tanstack/zod-adapter";
 import { useSuspenseQuery } from "@tanstack/react-query";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import { Suspense } from "react";
-import { getArticleOpts, getRelatedArticleOpts } from "@/queries.ts";
-import TwoColumnLayout from "@/components/layout/TwoColumnLayout.tsx";
-import { Sidebar } from "@/components/Sidebar.tsx";
-import { SidebarBox } from "@/components/SidebarBox.tsx";
-import LoadingIndicator from "@/components/LoadingIndicator.tsx";
-import RelatedArticleSlider from "@/components/articlepage/RelatedArticleSlider.tsx";
-import ArticleBody from "@/components/articlepage/ArticleBody.tsx";
-import { ArticleBanner } from "@/components/articlepage/ArticleBanner.tsx";
+
 import ArticlePageLayout from "@/components/articlepage/ArticlePageLayout.tsx";
+import RelatedArticleSlider from "@/components/articlepage/RelatedArticleSlider.tsx";
+import LoadingIndicator from "@/components/LoadingIndicator.tsx";
+import { getArticleOpts, getRelatedArticleOpts } from "@/queries.ts";
 
 export const Route = createFileRoute("/articles/$articleId/")({
   notFoundComponent: () => {

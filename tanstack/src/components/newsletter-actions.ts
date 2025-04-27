@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { getWebRequest } from "@tanstack/react-start/server";
+
 import { delayConfig } from "@/demo-config.ts";
 
 export const subscribeToNewsletter = createServerFn({

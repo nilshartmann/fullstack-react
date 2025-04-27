@@ -1,6 +1,7 @@
 import "./ArticlesRouteHeader.css";
 
 import { Link } from "@tanstack/react-router";
+
 import BreakingNews from "@/components/BreakingNews";
 import ReadingSpeedChooser from "@/components/ReadingSpeedChooser";
 import { showReadingSpeedChooser } from "@/demo-config.ts";

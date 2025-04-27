@@ -2,7 +2,7 @@ export function buildUrl(
   path: string | null | undefined,
   newParams: Record<
     string,
-    string | number | boolean | undefined | null | string[]
+    string | number | boolean | undefined | null | Array<string>
   >,
 ) {
   const params = new URLSearchParams();

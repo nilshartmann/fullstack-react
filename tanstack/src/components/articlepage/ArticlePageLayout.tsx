@@ -1,13 +1,11 @@
-import { ReactNode, Suspense } from "react";
+import { ReactNode } from "react";
 
 import { ArticleBanner } from "@/components/articlepage/ArticleBanner";
 import ArticleBody from "@/components/articlepage/ArticleBody";
 import TwoColumnLayout from "@/components/layout/TwoColumnLayout";
-import { Article } from "@/types";
-import { SidebarBox } from "@/components/SidebarBox.tsx";
-import LoadingIndicator from "@/components/LoadingIndicator.tsx";
-import RelatedArticleSlider from "@/components/articlepage/RelatedArticleSlider.tsx";
 import { Sidebar } from "@/components/Sidebar.tsx";
+import { SidebarBox } from "@/components/SidebarBox.tsx";
+import { Article } from "@/types";
 
 type ArticlePageProps = {
   article: Article;

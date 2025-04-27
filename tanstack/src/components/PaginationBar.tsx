@@ -20,12 +20,12 @@ export default function PaginationBar({
   currentPage = 1,
   children,
 }: PaginationBarProps) {
-  let disabled: boolean = false;
+  let disabled = false;
   const currentPageNumber = currentPage;
   const maxButtons = 3;
   let startPage: number;
   let endPage: number;
-  const buttons: ReactNode[] = [];
+  const buttons: Array<ReactNode> = [];
 
   if (currentPageNumber <= Math.floor(maxButtons / 2)) {
     startPage = 1;

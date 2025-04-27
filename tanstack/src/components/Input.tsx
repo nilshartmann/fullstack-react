@@ -1,5 +1,5 @@
-import IntrinsicElements = React.JSX.IntrinsicElements;
 import { twMerge } from "tailwind-merge";
+import IntrinsicElements = React.JSX.IntrinsicElements;
 
 type InputProps = IntrinsicElements["input"];
 

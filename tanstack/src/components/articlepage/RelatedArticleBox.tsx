@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+
 import { ArrowButton } from "@/components/Button";
 import { H3 } from "@/components/Heading";
 import { enableRelatedArticlesButton } from "@/demo-config";

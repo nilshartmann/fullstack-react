@@ -1,6 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import React from "react";
 
-import { Link } from "@tanstack/react-router";
 import { formatDate } from "@/components/format-date";
 import { H1 } from "@/components/Heading";
 import { LikesWidget } from "@/components/LikesWidget";

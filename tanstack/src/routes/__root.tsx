@@ -1,13 +1,13 @@
+import "../globals.css";
+
 import {
   HeadContent,
   Outlet,
-  Scripts,
   createRootRouteWithContext,
   redirect,
 } from "@tanstack/react-router";
-
-import "../globals.css";
 import type { QueryClient } from "@tanstack/react-query";
+
 import GlobalHeader from "@/components/layout/GlobalHeader.tsx";
 
 interface MyRouterContext {
@@ -42,30 +42,17 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     ],
   }),
 
-  component: () => (
+  component: RootComponent,
+});
+
+function RootComponent() {
+  return (
     <>
       <HeadContent />
       <>
         <GlobalHeader />
         <Outlet />
       </>
-    </>
-  ),
-});
-
-function SsrRootDocument({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <head>
-        <HeadContent />
-      </head>
-      <body
-        className="flex min-h-svh flex-col overflow-y-scroll font-inter text-teal-900 antialiased"
-        suppressHydrationWarning
-      >
-        {children}
-        <Scripts />
-      </body>
     </>
   );
 }

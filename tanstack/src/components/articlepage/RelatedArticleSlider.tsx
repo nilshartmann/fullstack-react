@@ -1,10 +1,9 @@
 "use client";
 
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
-import { useSuspenseQuery } from "@tanstack/react-query";
 import RelatedArticleBox from "@/components/articlepage/RelatedArticleBox";
-import { RelatedArticle } from "@/types";
 import { getRelatedArticleOpts } from "@/queries.ts";
 
 type RelatedArticlesProps = {
