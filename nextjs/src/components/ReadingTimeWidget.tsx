@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 
 import { formatDuration } from "@/components/format-duration";
+import { useReadingSpeed } from "@/components/ReadingSpeedProvider";
 
 type ReadingTimeWidgetProps = {
   wordCount: number;
@@ -9,7 +11,7 @@ type ReadingTimeWidgetProps = {
 export default function ReadingTimeWidget({
   wordCount,
 }: ReadingTimeWidgetProps) {
-  const readingSpeed = 100;
+  const readingSpeed = useReadingSpeed().readingSpeed;
 
   return (
     <div

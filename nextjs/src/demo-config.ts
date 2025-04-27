@@ -6,7 +6,7 @@ export const enableRelatedArticlesButton = true;
 
 // when set to true, also add
 // <ReadingSpeedProvider> to /app/layout.tsx
-export const showReadingSpeedChooser = false;
+export const showReadingSpeedChooser = true;
 
 export const showBreakingNews = true;
 

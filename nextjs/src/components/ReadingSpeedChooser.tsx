@@ -4,6 +4,8 @@ import PlusButton from "@/components/PlusButton";
 import { useReadingSpeed } from "@/components/ReadingSpeedProvider";
 
 export default function ReadingSpeedChooser() {
+  // ACCESS GLOBAL CONTEXT
+  //  WORKS EVEN ACROSS NAVIGATION
   const readingSpeed = useReadingSpeed();
 
   // todo
