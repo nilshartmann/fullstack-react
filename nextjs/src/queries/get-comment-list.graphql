@@ -1,0 +1,10 @@
+query GetCommentList($articleId: ID!) {
+  article(articleId: $articleId) {
+    id
+    comments {
+      id
+      text
+      writer
+    }
+  }
+}

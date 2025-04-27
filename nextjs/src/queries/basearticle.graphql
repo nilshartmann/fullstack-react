@@ -1,0 +1,16 @@
+fragment BaseArticleFragment on Article {
+  id
+  title
+  excerpt(maxLength: 150)
+  date
+  category
+  likes
+  image {
+    uri
+    altText
+  }
+  wordCount
+  writer {
+    name
+  }
+}

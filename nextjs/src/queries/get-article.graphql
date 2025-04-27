@@ -1,0 +1,16 @@
+query GetArticle($articleId: ID!) {
+  article(articleId: $articleId) {
+    ...BaseArticleFragment
+    body
+
+    nextArticle {
+      id
+      title
+    }
+
+    prevArticle {
+      id
+      title
+    }
+  }
+}
