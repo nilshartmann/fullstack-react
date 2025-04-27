@@ -48,6 +48,12 @@ export const Route = createFileRoute("/articles/$articleId/")({
       getArticleQueryOpts(params.articleId),
     );
   },
+
+  // Erst RelatedArticleSlider einbauen,
+  // DANN Pending Component
+  // DANN SUSPENSE
+  //
+  pendingComponent: GlobalLoadingIndicator,
 });
 
 function RouteComponent() {
@@ -58,5 +64,10 @@ function RouteComponent() {
     return <h1>not found</h1>;
   }
 
-  return <ArticlePageLayout article={response.data} />;
+  return (
+    <ArticlePageLayout
+      article={response.data}
+      sidebar={<RelatedArticleSlider articleId={articleId} />}
+    />
+  );
 }
