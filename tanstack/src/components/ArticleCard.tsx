@@ -23,13 +23,15 @@ export default function ArticleCard({ article }: ArticleCardProps) {
             "border-b-4 border-b-teal-800 group-hover:border-b-rose-700"
           }
         >
-          <div className={"overflow-hidden"}>
-            <img
-              className="h-32 max-h-full w-full max-w-full transform rounded-t-lg object-cover transition-all duration-500 ease-in-out hover:scale-110"
-              src={article.image.uri}
-              alt={article.title}
-            />
-          </div>
+          <Link to={"/articles/$articleId"} params={{ articleId: article.id }}>
+            <div className={"overflow-hidden"}>
+              <img
+                className="h-32 max-h-full w-full max-w-full transform rounded-t-lg object-cover transition-all duration-500 ease-in-out hover:scale-110"
+                src={article.image.uri}
+                alt={article.title}
+              />
+            </div>
+          </Link>
         </div>
       )}
       <div
