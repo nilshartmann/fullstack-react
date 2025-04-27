@@ -3,16 +3,27 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import ky from "ky";
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { Suspense } from "react";
 import ArticlePageLayout from "@/components/articlepage/ArticlePageLayout.tsx";
 
-import { Article, GetArticleResponse } from "@/types.ts";
+import {
+  Article,
+  BaseArticle,
+  GetArticleResponse,
+  GetRelatedArticlesResponse,
+} from "@/types.ts";
+import { delayConfig } from "@/demo-config.ts";
+import RelatedArticleSlider from "@/components/articlepage/RelatedArticleSlider.tsx";
+import LoadingIndicator from "@/components/LoadingIndicator.tsx";
+import { GlobalLoadingIndicator } from "@/components/GlobalLoadingIndicator.tsx";
+import { getRelatedArticleOpts } from "@/api/related-articles-query.ts";
 
 const loadArticle = createServerFn({ method: "GET" })
   .validator((d) => z.string().parse(d))
   .handler(async ({ data: articleId }) => {
     console.log("Loading Data on Server", articleId);
     const response = await ky
-      .get(`http://localhost:20080/api/get-article/${articleId}`)
+      .get(`http://localhost:20080/api/get-article/${articleId}?slowDown=2000`)
       .json();
 
     //
@@ -44,9 +55,13 @@ export const Route = createFileRoute("/articles/$articleId/")({
 
     console.log("Route Loader for ", params.articleId);
 
-    return context.queryClient.ensureQueryData(
-      getArticleQueryOpts(params.articleId),
+    context.queryClient.ensureQueryData(
+      getRelatedArticleOpts(params.articleId),
     );
+
+    // Mit 'return' wartet der Server -> KEINE Pending Component!
+    // OHNE 'return' kein Warten -> dann wird im Client gewartet
+    context.queryClient.ensureQueryData(getArticleQueryOpts(params.articleId));
   },
 
   // Erst RelatedArticleSlider einbauen,
@@ -67,7 +82,11 @@ function RouteComponent() {
   return (
     <ArticlePageLayout
       article={response.data}
-      sidebar={<RelatedArticleSlider articleId={articleId} />}
+      sidebar={
+        <Suspense fallback={<LoadingIndicator />}>
+          <RelatedArticleSlider articleId={articleId} />
+        </Suspense>
+      }
     />
   );
 }

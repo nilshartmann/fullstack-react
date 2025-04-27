@@ -10,7 +10,7 @@ const loadRelatedArticles = createServerFn({ method: "GET" })
     console.log("Loading Related Articles on Server", articleId);
     const response = await ky
       .get(
-        `http://localhost:20080/api/get-related-articles/${articleId}?slowDown=2000`,
+        `http://localhost:20080/api/get-related-articles/${articleId}?slowDown=3000`,
       )
       .json();
 
