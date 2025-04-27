@@ -24,7 +24,7 @@ export const getArticleListOpts = () =>
   queryOptions({
     queryKey: ["articles"],
     async queryFn(): Promise<GetArticleListResponse["articleList"]> {
-      const response = await ky.get("get-article-list").json();
+      const response = await ky.get("get-article-list?pageSize=3").json();
       return GetArticleListResponse.parse(response).articleList;
     },
   });
