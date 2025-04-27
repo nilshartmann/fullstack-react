@@ -1,0 +1,13 @@
+{
+  "framework": "react",
+  "typescript": true,
+  "projectName": "tkdevtalk-tanstack-start-intro-prepare",
+  "mode": "file-router",
+  "tailwind": true,
+  "packageManager": "pnpm",
+  "toolchain": "eslint+prettier",
+  "variableValues": {},
+  "git": true,
+  "version": 1,
+  "existingAddOns": ["start", "tanstack-query"]
+}

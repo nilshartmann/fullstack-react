@@ -1,0 +1,11 @@
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+public/fonts/
+public/fontawesome/
+
+.cta.json
+temp-google-fonts.css
+routeTree.gen.ts
+eslint.config.js
