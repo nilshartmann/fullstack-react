@@ -1,19 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { use, useState } from "react";
 
 import RelatedArticleBox from "@/components/articlepage/RelatedArticleBox";
 import { ArrowButton } from "@/components/Button";
 import { RelatedArticle } from "@/types";
 
 type RelatedArticlesProps = {
-  relatedArticles: RelatedArticle[];
+  relatedArticlesPromise: Promise<RelatedArticle[]>;
 };
 
 export default function RelatedArticleSlider({
-  relatedArticles,
+  relatedArticlesPromise,
 }: RelatedArticlesProps) {
-  const articles = relatedArticles;
+  const articles = use(relatedArticlesPromise);
   const [selected, setSelected] = useState(0);
 
   const article = articles[selected];
