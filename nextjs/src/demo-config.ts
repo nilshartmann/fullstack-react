@@ -29,7 +29,7 @@ export const delayConfig: Record<string, number> = {
   GetCommentList: 0,
 
   // Reading related articles on `/articles/[articleId]`,
-  GetRelatedArticles: 0,
+  GetRelatedArticles: 1000,
 
   // Delay the response in LikesWidget
   AddLike: 250,

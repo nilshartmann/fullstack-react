@@ -1,10 +1,13 @@
+"use client";
+import { useFormStatus } from "react-dom";
+
 import { LikeIcon, LikeIndicator } from "@/components/LoadingIndicator";
 
 type LikesButtonProps = {
   likes: number;
 };
 export default function LikesButton({ likes }: LikesButtonProps) {
-  const { pending } = { pending: false };
+  const { pending } = useFormStatus();
 
   return (
     <button

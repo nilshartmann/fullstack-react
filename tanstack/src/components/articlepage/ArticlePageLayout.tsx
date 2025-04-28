@@ -8,6 +8,7 @@ import { Sidebar } from "@/components/Sidebar.tsx";
 import { SidebarBox } from "@/components/SidebarBox.tsx";
 import { Article } from "@/types";
 import { Button } from "@/components/Button.tsx";
+import ArticleNavBar from "@/components/articlepage/ArticleNavBar.tsx";
 
 type ArticlePageProps = {
   article: Article;
@@ -22,7 +23,7 @@ export default function ArticlePageLayout({
 }: ArticlePageProps) {
   return (
     <>
-      {/*<ArticleNavBar article={article} />*/}
+      <ArticleNavBar article={article} />
       <ArticleBanner article={article} />
       <TwoColumnLayout
         sidebar={
